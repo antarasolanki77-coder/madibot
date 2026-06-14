@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedAssist - Medical Shop Chatbot</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Main Chat Window -->
+        <main class="chat-container">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="logo-area">
+                    <span class="logo-icon">🩺</span>
+                    <div class="title-meta">
+                        <h1>MedAssist</h1>
+                        <p class="status"><span class="pulse-dot"></span> Online Pharmacy Assistant</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <button id="clear-chat" title="Clear Conversation">🧹</button>
+                </div>
+            </header>
+
+            <!-- Chat Message Area -->
+            <section class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        👋 Welcome to **MedAssist**!<br><br>
+                        I can help you find medicines, check prices, availability, and verify doctor prescriptions.<br><br>
+                        *Please select a symptom below or type your query to start!*
+                    </div>
+                </div>
+            </section>
+
+            <!-- Typing Indicator (Hidden by default) -->
+            <div class="typing-indicator" id="typing-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Quick Action Pills -->
+            <section class="quick-pills">
+                <div class="pill-group-label">Symptoms:</div>
+                <button class="pill-btn" data-symptom="fever">🌡️ Fever</button>
+                <button class="pill-btn" data-symptom="headache">💆 Headache</button>
+                <button class="pill-btn" data-symptom="cold">🤧 Cold</button>
+                <button class="pill-btn" data-symptom="cough">💨 Cough</button>
+                <button class="pill-btn" data-symptom="stomach pain">🤢 Stomach Pain</button>
+                <button class="pill-btn" data-symptom="acidity">🔥 Acidity</button>
+            </section>
+
+            <section class="quick-pills">
+                <div class="pill-group-label">Medicines:</div>
+                <button class="pill-btn" data-med="paracetamol">💊 Paracetamol</button>
+                <button class="pill-btn" data-med="dolo 650">💊 Dolo 650</button>
+                <button class="pill-btn" data-med="crocin">💊 Crocin</button>
+                <button class="pill-btn" data-med="sinarest">💊 Sinarest</button>
+                <button class="pill-btn" data-med="digene">💊 Digene</button>
+                <button class="pill-btn" data-med="amoxicillin">💊 Amoxicillin (Rx)</button>
+                <button class="pill-btn" id="list-all-btn">📋 List All</button>
+            </section>
+
+            <!-- Input Area -->
+            <footer class="chat-footer">
+                <form id="chat-form" class="input-form">
+                    <input 
+                        type="text" 
+                        id="chat-input" 
+                        placeholder="Type medicine name or symptom (e.g. Paracetamol)..." 
+                        autocomplete="off" 
+                        required
+                    >
+                    <button type="submit" class="send-btn" id="send-btn">
+                        <span class="send-icon">➔</span>
+                    </button>
+                </form>
+                <div class="disclaimer">
+                    🛑 **Disclaimer:** Information provided is for educational reference only. For severe conditions, please consult a medical professional immediately.
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
